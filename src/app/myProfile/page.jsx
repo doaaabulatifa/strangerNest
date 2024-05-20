@@ -8,7 +8,7 @@ export default async function myProfile() {
     console.log({userId})
  
     const result = await db.query(`SELECT * FROM profiles WHERE clerk_id = '${userId}'`);
-  const profile = result.rows[0]; // SELECT returns an object with a rows proberty, which is an array of our results
+  const profile = result.rows[0]; 
 
   async function editProfile(formData) {
     "use server";
@@ -31,17 +31,18 @@ export default async function myProfile() {
         <input
           name="name"
           placeholder="your Name"
-         
+          defaultValue={profile.user_name}
         />
         <input
           name="email"
           placeholder="your email"
+          defaultValue={profile.email}
          
         />
         <input
           name="location"
           placeholder="your location"
-         
+          defaultValue={profile.location}
         />
 
         <label>bio</label>
@@ -49,6 +50,7 @@ export default async function myProfile() {
           name="bio"
           placeholder="bio"
           rows={5}
+          defaultValue={profile.bio}
         ></textarea>
 
         <button>Submit Changes</button>
