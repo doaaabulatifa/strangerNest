@@ -5,9 +5,10 @@ import { auth } from "@clerk/nextjs/server";
 
 export default async function myProfile() {
     const { userId } = auth();
-    console.log({userId})
+    console.log({userId});
+    const result = await db.query("SELECT * FROM profiles WHERE clerk_id = $1", [userId]);
  
-    const result = await db.query(`SELECT * FROM profiles WHERE clerk_id = '${userId}'`);
+  
   const profile = result.rows[0]; 
 
   async function editProfile(formData) {
@@ -16,9 +17,10 @@ export default async function myProfile() {
     const email= formData.get("email");
     const bio= formData.get("bio");
     const location= formData.get("location");
-
-    await db.query(`UPDATE profiles SET user_name=${name}, email=${email},bio=${bio},location=${location} WHERE clerk_id = '${userId}'`);
-
+    await db.query(
+        "UPDATE profiles SET user_name = $1, email = $2, bio = $3, location = $4 WHERE clerk_id = $5",
+        [name, email, bio, location, userId]
+      );
     revalidatePath("/");
   
     redirect("/");
