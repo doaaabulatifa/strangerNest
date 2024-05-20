@@ -14,7 +14,7 @@ export default async function myProfile() {
 
     async function editProfile(formData) {
         "use server";
-        const user_name = formData.get("uer_name");
+        const user_name = formData.get("user_name");
         const email = formData.get("email");
         const bio = formData.get("bio");
         const location = formData.get("location");
