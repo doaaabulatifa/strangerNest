@@ -6,6 +6,7 @@ import { auth } from "@clerk/nextjs/server";
 export default async function myProfile() {
     const { userId } = auth();
     console.log({userId})
+ 
     const result = await db.query(`SELECT * FROM profiles WHERE clerk_id = '${userId}'`);
   const profile = result.rows[0]; // SELECT returns an object with a rows proberty, which is an array of our results
 
@@ -16,7 +17,7 @@ export default async function myProfile() {
     const bio= formData.get("bio");
     const location= formData.get("location");
 
-    await db.query(`UPDATE profiles SET user_name=${name}, email=${email},bio=${bio},location=${location} WHERE clerk_id = ${userId}`);
+    await db.query(`UPDATE profiles SET user_name=${name}, email=${email},bio=${bio},location=${location} WHERE clerk_id = '${userId}'`);
 
     revalidatePath("/");
   
