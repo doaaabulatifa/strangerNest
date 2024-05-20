@@ -19,9 +19,8 @@ export default async function myProfile() {
     await db.query(`UPDATE profiles SET user_name=${name}, email=${email},bio=${bio},location=${location} WHERE clerk_id = ${userId}`);
 
     revalidatePath("/myProfile");
-    revalidatePath(`/myProfile/${params.id}`);
-
-    redirect(`/strangers/${params.id}`);
+  
+    redirect("/strangers");
   }
 
   return (
