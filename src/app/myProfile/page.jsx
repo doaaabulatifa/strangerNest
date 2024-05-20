@@ -14,14 +14,14 @@ export default async function myProfile() {
 
     async function editProfile(formData) {
         "use server";
-        const name = formData.get("name");
+        const user_name = formData.get("uer_name");
         const email = formData.get("email");
         const bio = formData.get("bio");
         const location = formData.get("location");
     
         await db.query(
             "UPDATE profiles SET user_name = $1, email = $2, bio = $3, location = $4 WHERE clerk_id = $5",
-            [name, email, bio, location, userId]
+            [user_name, email, bio, location, userId]
         );
     
         revalidatePath("/");
@@ -34,7 +34,7 @@ export default async function myProfile() {
             <form action={editProfile}>
                 <label>Name</label>
                 <input
-                    name="name"
+                    name="user_name"
                     placeholder="Your Name"
                     defaultValue={profile.user_name}
                 />
