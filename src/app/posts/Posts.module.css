@@ -1,0 +1,43 @@
+.postsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .post {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  .time{
+    font-size: 10px;
+  }
+  .comment{
+    color:rgb(131, 21, 83);
+  }
+  
+  .post h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .post p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .post a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .post a:hover {
+    text-decoration: underline;
+  }
+  
+  .post:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
