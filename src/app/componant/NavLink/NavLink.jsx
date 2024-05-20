@@ -20,6 +20,7 @@ export default function NavLink() {
         <Link className={styles.navLink}  href="/about">About</Link>
         <Link className={styles.navLink}  href="/posts">Strange stories</Link>
         <Link className={styles.navLink} href="/strangers">The Strangers</Link>
+        <Link className={styles.navLink} href="/myProfile">my profile</Link>
         </ul>
         </nav>
    
