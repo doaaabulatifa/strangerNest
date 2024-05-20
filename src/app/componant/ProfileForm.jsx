@@ -26,6 +26,7 @@ export default function ProfileForm() {
         <input name="email" placeholder="email" />
         <input name="bio" placeholder="bio" />
         <input name="location" placeholder="location" />
+       
         <button>Submit</button>
       </form>
     </div>
