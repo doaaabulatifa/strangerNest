@@ -1,9 +1,9 @@
 import { db } from "@/lib/db";
-import styles from "./strangers.module.css";
+import styles from "./starngers.module.css";
 import Link from "next/link";
 
 export default async function Starngers() {
-  "use server"
+  "use server";
   const result = await db.query(`SELECT * FROM profiles`);
   const profiles = result.rows;
 
