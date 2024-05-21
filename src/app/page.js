@@ -1,6 +1,6 @@
 import Image from "next/image";
 import stra from "../../public/OIP.jpg";
-import "globals.css";
+import "src/app/globals.css";
 
 
 export default function Home() {
