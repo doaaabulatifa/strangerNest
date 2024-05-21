@@ -48,11 +48,12 @@
   
   /* Image Style */
   .image {
-    width: 100%;
-    max-width: 600px;
+    width: 200px;
+    max-width: 200px;
     height: auto;
     margin: 20px auto;
     display: block;
+    align-items: center;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
