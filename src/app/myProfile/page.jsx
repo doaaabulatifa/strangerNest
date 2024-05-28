@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import BasicSelect from "../component/BasicSelect";  // Adjust the path if necessary
 import { useState } from "react";
+import BasicSelect from "../componant/BaiscSelect";
 
 export default async function myProfile() {
   const { userId } = auth();
