@@ -5,34 +5,29 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function BasicSelect() {
-  const [location, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
+export default function BasicSelect({ value, onChange }) {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Location</InputLabel>
+        <InputLabel id="location-select-label">Location</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={location}
+          labelId="location-select-label"
+          id="location-select"
+          value={value}
           label="Location"
-          onChange={handleChange}
+          onChange={onChange}
         >
-          <MenuItem value={10}>uk</MenuItem>
-          <MenuItem value={20}>us</MenuItem>
-          <MenuItem value={30}>canada</MenuItem>
-          <MenuItem value={40}>sweden</MenuItem>
-          <MenuItem value={50}>Danemark</MenuItem>
-          <MenuItem value={60}>uae</MenuItem>
-          <MenuItem value={70}>Jordan</MenuItem>
-          <MenuItem value={80}>Norway</MenuItem>
+          <MenuItem value="uk">UK</MenuItem>
+          <MenuItem value="us">US</MenuItem>
+          <MenuItem value="canada">Canada</MenuItem>
+          <MenuItem value="sweden">Sweden</MenuItem>
+          <MenuItem value="denmark">Denmark</MenuItem>
+          <MenuItem value="uae">UAE</MenuItem>
+          <MenuItem value="jordan">Jordan</MenuItem>
+          <MenuItem value="norway">Norway</MenuItem>
         </Select>
       </FormControl>
     </Box>
   );
 }
+
