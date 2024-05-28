@@ -23,7 +23,7 @@ export default async function myProfile() {
     const user_name = formData.get("user_name");
     const email = formData.get("email");
     const bio = formData.get("bio");
-    // Use location from state instead of formData
+  
     await db.query(
       "UPDATE profiles SET user_name = $1, email = $2, bio = $3, location = $4 WHERE clerk_id = $5",
       [user_name, email, bio, location, userId]
@@ -46,7 +46,7 @@ export default async function myProfile() {
           placeholder="Your Email"
           defaultValue={profile.email}
         />
-        <BasicSelect value={location} onChange={handleChange} />
+        <BasicSelect value={profile.location} onChange={handleChange} />
         <label>Bio</label>
         <textarea
           name="bio"
