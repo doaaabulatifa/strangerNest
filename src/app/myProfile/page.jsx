@@ -2,6 +2,7 @@ import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
+import BasicSelect from "../componant/BaiscSelect";
 
 export default async function myProfile() {
     const { userId } = auth();
@@ -46,6 +47,7 @@ export default async function myProfile() {
           placeholder="your location"
           defaultValue={profile.location}
         />
+        <BasicSelect />
 
         <label>bio</label>
         <textarea
